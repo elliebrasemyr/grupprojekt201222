@@ -11,7 +11,6 @@ class UI{
         this.correctLetters = [];
         this.wrongLetters = [];
     }
-
     displayWord(selectedWord){
         //Split() Method divides a string into an ordered list of substrings,
         //then it puts the substrings into an array and return it.
@@ -60,7 +59,6 @@ class UI{
             this.popup.style.display = 'flex';
         }
     }
-
     showMessage(){
         /*Showing a class in css by adding the class to dom*/
         this.letterExist.classList.add('show');
@@ -69,7 +67,6 @@ class UI{
             this.letterExist.classList.remove('show');
         }, 2000);
     }
-
     keyDown(selectedWord, e){
         //e = witch key u press, each letter on the keyboard has a nr
         //in this case we reduce actions if ex. the user press a number or anything else then a-z
@@ -93,7 +90,6 @@ class UI{
             } else{
                 if(!this.wrongLetters.includes(letter)){
                     this.wrongLetters.push(letter);
-    
                     this.updateWrongLetters();
                 } else{
                     this.showMessage();
@@ -101,7 +97,6 @@ class UI{
             }
         }
     }
-
     btnStartOver(selectedWord){
         //"clean" arrays so its empty for next game
         this.correctLetters.splice(0);

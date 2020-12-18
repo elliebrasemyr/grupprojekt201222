@@ -1,21 +1,12 @@
-function currentTime() {
-    let date = new Date(); /* creating object of Date class */
-    let hour = date.getHours();
-    let min = date.getMinutes();
-    
-    hour = updateTime(hour);
-    min = updateTime(min);
-    
-    document.getElementById("clock").innerText = `${hour} : ${min}`; /* adding time to the div */
+class Time{
+  static datetime(){
+    const clock = document.getElementById("clock");
+    clock.innerText = (new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
   }
-  
-  function updateTime(k) {
-    if (k < 10) {
-      return "0" + k;
-    }
-    else {
-      return k;
-    }
-  }
-  
-  currentTime();
+}
+
+document.addEventListener('DOMContentLoaded', e =>{
+  Time.datetime();
+})
+
+

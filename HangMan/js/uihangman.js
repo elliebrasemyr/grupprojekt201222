@@ -16,10 +16,10 @@ class UI{
         //then it puts the substrings into an array and return it.
         //
         this.wordEl.innerHTML = `
-        ${selectedWord.split('').map(letter =>   
-            `<span class="letter">
-                ${this.correctLetters.includes(letter) ? letter : ''}
-            </span>`).join('')}`;
+                                ${selectedWord.split('').map(letter =>   
+                                `<span class="letter">
+                                ${this.correctLetters.includes(letter) ? letter : ''}
+                                </span>`).join('')}`;
 
         //Create a word so we can comper it to the word we looking for
         //replace will replace all new line character in string,
@@ -31,15 +31,13 @@ class UI{
             this.popup.style.display = 'flex';
         }
     }
-
     updateWrongLetters(){
-        this.wrongLetters.innerHTML =
         //If wrongLetters length is greater then 0 write out: "wronge:" else nothing
         //map creates a new array with wrong letters user input
-        `
-        ${this.wrongLetters.length > 0 ? '<h5 class="block">Wrong:</h5>' : ''}
-        ${this.wrongLetters.map(letter => `<p>${letter}</p>`)}
-        `;
+        this.wrongLetters.innerHTML =   `
+                                        ${this.wrongLetters.length > 0 ? '<h5 class="block">Wrong:</h5>' : ''}
+                                        ${this.wrongLetters.map(letter => `<p>${letter}</p>`)}
+                                        `;
         //part = the hole code of one line/cicle in svg on HTML
         //index = witch index the part has
         //In CSS the part is displays as none, so foreach wrongletter that has'nt a bigger index then

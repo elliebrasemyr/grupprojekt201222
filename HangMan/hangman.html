@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <script src="https://kit.fontawesome.com/1231e9e673.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/HangMan/css/hangman.css">
+    <link rel="stylesheet" href="/A.mainPage/css/mainstyle.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div id="mobile">
+            <div class="screen active">
+                <section id="hangmanscreen">
+                    <div id="hangman">
+
+                        <div class="screen-head t-center">
+                            <h3>Hangman<span><a class="closeBtn" href="/InsideIphone/insidePhone.html"><i class="far fa-window-close"></i></a></span></h3>
+                            <span class="christmas">CHRISTMAS EDITION</span>
+                        </div>
+                        <div class="screen-body">
+                            <div class="body-left">
+                                <svg class="figure" height="240" width="130">
+                                    <!---->
+                                    <line x1="40" y1="20" x2="100" y2="20"/>
+                                    <line x1="40" y1="40" x2="60" y2="20"/>
+                                    <line x1="100" y1="20" x2="100" y2="50"/>
+                                    <line x1="40" y1="20" x2="40" y2="150"/>
+                                    <line x1="20" y1="150" x2="60" y2="150"/>
+
+                                    <!--head-->
+                                    <circle cx="100" cy="60" r="10" 
+                                    class="body-part"/>
+                                    <!--body-->
+                                    <line x1="100" y1="70" x2="100" y2="100"
+                                    class="body-part"/>
+                                    <!--arms-->
+                                    <line x1="100" y1="70" x2="110" y2="100"
+                                    class="body-part"/>
+                                    <line x1="100" y1="70" x2="90" y2="100"
+                                    class="body-part"/>
+                                    <!--legs-->
+                                    <line x1="100" y1="100" x2="110" y2="130"
+                                    class="body-part"/>
+                                    <line x1="100" y1="100" x2="90" y2="130"
+                                    class="body-part"/>
+                                </svg>
+                            </div>
+                            <div class="body-right" id="wrong-letter">                
+                            </div>
+                        </div>
+                        <div class="screen-footer">
+                            <div class="word" id="word">
+                            </div>
+                        </div>
+
+                        <!--Hidden Containers-->
+                        <div class="popup" id="popup">
+                                <div class="container-pop t-center">
+                                    <h2 id="won-or-lose">You won</h2>
+                                    <a href="#" id="play">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        Play Again
+                                    </a>
+                                </div>
+                        </div>
+                        <!--show class makes it show-->
+                        <div id="warning-messege" class="warning-message">
+                                <p>You already entered this letter</p>
+                        </div>
+                    </div>
+                </section>
+        </div>
+
+            
+            <div class="home-btn"></div>
+            <div class="inner"></div>
+
+            <ul class="volume">
+                    <li></li>
+                    <li></li>
+            </ul>
+            <ul class="silent">
+                    <li></li>
+            </ul>
+            <ul class="sleep">
+                    <li></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script type="module" src="/HangMan/js/hangmanapp.js"></script>
+</body>
+</html>

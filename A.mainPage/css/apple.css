@@ -1,0 +1,26 @@
+.screen:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255, 0.1);
+    width: 100%;
+    height: 100%;
+    transform: skewX(-5deg) translateX(-50%);
+}
+.start-container{
+    background: rgb(15, 15, 15);
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+.fa-apple{
+    color: white;
+    font-size: 4rem;
+    
+}

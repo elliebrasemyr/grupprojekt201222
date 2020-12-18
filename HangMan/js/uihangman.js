@@ -9,11 +9,11 @@ class UI{
         this.popup = document.getElementById('popup');
 
         this.correctLetters = [];
-        this.wrongLetters = [];
+        this.wrongLettersArray = [];
     }
     displayWord(selectedWord){
         //Split() Method divides a string into an ordered list of substrings,
-        //then it puts the substrings into an array and return it.
+        //then it puts the substrings into an array and returns it.
         this.wordEl.innerHTML = `
                                 ${selectedWord.split('').map(letter =>   
                                 `<span class="letter">
@@ -34,15 +34,15 @@ class UI{
         //If wrongLetters length is greater then 0 write out: "wronge:" else nothing
         //map creates a new array with wrong letters user input
         this.wrongLetters.innerHTML =   `
-                                        ${this.wrongLetters.length > 0 ? '<h5 class="block">Wrong:</h5>' : ''}
-                                        ${this.wrongLetters.map(letter => `<p>${letter}</p>`)}
+                                        ${this.wrongLettersArray.length > 0 ? '<h5 class="block">Wrong:</h5>' : ''}
+                                        ${this.wrongLettersArray.map(letter => `<p>${letter}</p>`)}
                                         `;
         //part = the hole code of one line/cicle in svg on HTML
         //index = witch index the part has
         //In CSS the part is displays as none, so foreach wrongletter that has'nt a bigger index then
         //all parts. Make that element to block (show in DOM)
         this.bodyPart.forEach((part, index) =>{
-            const errors = this.wrongLetters.length;
+            const errors = this.wrongLettersArray.length;
             if(index < errors){
                 part.style.display = 'block';
             } else{
@@ -51,7 +51,7 @@ class UI{
         })
         
         //If array wrongLetters lenght is the same as bodypars length, -> You Lose messege
-        if(this.wrongLetters.length === this.bodyPart.length){
+        if(this.wrongLettersArray.length === this.bodyPart.length){
             this.lastMess.innerText = 'You Lose!';
             this.popup.style.display = 'flex';
         }
@@ -78,8 +78,8 @@ class UI{
                     this.showMessage();                 //Show message that the letter already entered
                 }
             } else{
-                if(!this.wrongLetters.includes(letter)){
-                    this.wrongLetters.push(letter);     //Puch letter to Array
+                if(!this.wrongLettersArray.includes(letter)){
+                    this.wrongLettersArray.push(letter);//Puch letter to Array
                     this.updateWrongLetters();          //Calls method updateWrongLetters
                 } else{
                     this.showMessage();                 //Show message that the letter already entered
@@ -90,11 +90,11 @@ class UI{
     btnStartOver(selectedWord){
 
         this.correctLetters.splice(0);                  //"clean" arrays so its empty for next game
-        this.wrongLetters.splice(0);
+        this.wrongLettersArray.splice(0);
         
         this.displayWord(selectedWord);                 //putting a new word on DOM
         
-        this.updateWrongLetters();                      //cleaning wrong words and the hangman
+        this.updateWrongLetters();                      //cleaning wrong letters and the hangman
     
         this.popup.style.display = '';                  //Take away the popup
     }

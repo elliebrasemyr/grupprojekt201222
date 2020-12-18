@@ -13,14 +13,14 @@ api.getInfo()
     ui.displayWord(selectedWord);
     window.addEventListener('keydown', e =>{
         if(e.keyCode){ 
-            ui.keyDown(selectedWord, e)
+            ui.keyDown(selectedWord, e)                                 //push the word and the keyNr to method in UI
         }
     })
     playBtn.addEventListener('click', () =>{
-        //Create a new random word
-        selectedWord = words[Math.floor(Math.random() * words.length)];
-        //pass the new word to the method in ui
-        ui.btnStartOver(selectedWord);
+        
+        selectedWord = words[Math.floor(Math.random() * words.length)]; //Create a new random word from JSON file
+        
+        ui.btnStartOver(selectedWord);                                  //Pass the new word to the method in ui
     })
 
 })

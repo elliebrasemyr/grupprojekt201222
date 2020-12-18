@@ -50,7 +50,7 @@ class UI{
             }
         })
         
-        //If array wrongLetters lenght is the same as bodypars length, -> You Lose messege
+        //If array wrongLettersArray lenght is the same as bodypars length, -> You Lose messege
         if(this.wrongLettersArray.length === this.bodyPart.length){
             this.lastMess.innerText = 'You Lose!';
             this.popup.style.display = 'flex';
@@ -89,12 +89,12 @@ class UI{
     }
     btnStartOver(selectedWord){
 
-        this.correctLetters.splice(0);                  //"clean" arrays so its empty for next game
+        this.correctLetters.splice(0);                  //clean arrays so its empty for next game
         this.wrongLettersArray.splice(0);
         
         this.displayWord(selectedWord);                 //putting a new word on DOM
         
-        this.updateWrongLetters();                      //cleaning wrong letters and the hangman
+        this.updateWrongLetters();                      //clean DOM from wrong letters and the hangman
     
         this.popup.style.display = '';                  //Take away the popup
     }

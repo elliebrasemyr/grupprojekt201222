@@ -1,13 +1,12 @@
 function currentTime() {
-    var date = new Date(); /* creating object of Date class */
-    var hour = date.getHours();
-    var min = date.getMinutes();
+    let date = new Date(); /* creating object of Date class */
+    let hour = date.getHours();
+    let min = date.getMinutes();
     
     hour = updateTime(hour);
     min = updateTime(min);
     
-    document.getElementById("clock").innerText = hour + " : " + min ; /* adding time to the div */
-      var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+    document.getElementById("clock").innerText = `${hour} : ${min}`; /* adding time to the div */
   }
   
   function updateTime(k) {

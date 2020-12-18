@@ -14,7 +14,6 @@ class UI{
     displayWord(selectedWord){
         //Split() Method divides a string into an ordered list of substrings,
         //then it puts the substrings into an array and return it.
-        //
         this.wordEl.innerHTML = `
                                 ${selectedWord.split('').map(letter =>   
                                 `<span class="letter">
@@ -58,54 +57,46 @@ class UI{
         }
     }
     showMessage(){
-        /*Showing a class in css by adding the class to dom*/
-        this.letterExist.classList.add('show');
-        /* Removes the class after 2s */
+        this.letterExist.classList.add('show');         //Showing a class in css by adding the class to DOM      
         setTimeout(() =>{
-            this.letterExist.classList.remove('show');
+            this.letterExist.classList.remove('show');  //Removes the class after 2s
         }, 2000);
     }
     keyDown(selectedWord, e){
         //e = witch key u press, each letter on the keyboard has a nr
         //in this case we reduce actions if ex. the user press a number or anything else then a-z
         //Also have the selectedWord in the parameter to check where we go next, is the letter
-        //includes in the word or not
+        //includes in the word or not or have the user allready wrote it?
         if(e.keyCode >= 65 && e.keyCode <= 90){
-            
-            //make every keypress to uppercase
-            const letter = e.key.toUpperCase();
+            const letter = e.key.toUpperCase();         //make every keypress to uppercase
     
             if(selectedWord.includes(letter)){
                 if(!this.correctLetters.includes(letter)){
-                    //Puch letter to Array
-                    this.correctLetters.push(letter);
-                    //Calls method displayWord
-                    this.displayWord(selectedWord);
+                    this.correctLetters.push(letter);   //Puch letter to Array
+                    this.displayWord(selectedWord);     //Calls method displayWord
                 } else{
-                    //Show message that the letter already entered
-                    this.showMessage();
+                    this.showMessage();                 //Show message that the letter already entered
                 }
             } else{
                 if(!this.wrongLetters.includes(letter)){
-                    this.wrongLetters.push(letter);
-                    this.updateWrongLetters();
+                    this.wrongLetters.push(letter);     //Puch letter to Array
+                    this.updateWrongLetters();          //Calls method updateWrongLetters
                 } else{
-                    this.showMessage();
+                    this.showMessage();                 //Show message that the letter already entered
                 }
             }
         }
     }
     btnStartOver(selectedWord){
-        //"clean" arrays so its empty for next game
-        this.correctLetters.splice(0);
+
+        this.correctLetters.splice(0);                  //"clean" arrays so its empty for next game
         this.wrongLetters.splice(0);
         
-        //putting a new word on DOM
-        this.displayWord(selectedWord);
+        this.displayWord(selectedWord);                 //putting a new word on DOM
         
-        this.updateWrongLetters();
+        this.updateWrongLetters();                      //cleaning wrong words and the hangman
     
-        this.popup.style.display = '';
+        this.popup.style.display = '';                  //Take away the popup
     }
 }
 

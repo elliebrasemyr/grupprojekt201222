@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <script src="https://kit.fontawesome.com/1231e9e673.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/QuizOne/ph.css">
+    <link rel="stylesheet" href="/A.mainPage/css/mainstyle.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div id="mobile">
+            <div class="screen active">
+
+<!---->
+              <div class="wrapper">
+                  <h1 class="neon">Coolest Quiz - EVER!</h1>
+                
+                  <!-- THE QUESTION & PROGRESS-->
+                    <div id="quiz">
+                    <header>
+                      <h3 id="question"></h3>
+                      <p><span id="progress"></span></p>
+                    </header>
+                
+                    <!-- THE BUTTONS -->
+                    <main class="grid-container">
+                      <button id="choice0"></button>
+                      <button id="choice1"></button>
+                      <button id="choice2"></button>
+                      <button id="choice3"></button>
+                    </main>
+                    
+                    <!-- THE SCORE-->
+                      <footer>
+                            <p><span id="score"></span></p>
+                      </footer>
+                    </div>
+              </div>
+<!---->
+
+            </div>
+
+            <a class="closeBtn" href="/InsideIphone/insidePhone.html">
+                <div class="home-btn"></div>
+            </a>
+            <div class="inner"></div>
+
+            <ul class="volume">
+                    <li></li>
+                    <li></li>
+            </ul>
+            <ul class="silent">
+                    <li></li>
+            </ul>
+            <ul class="sleep">
+                    <li></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

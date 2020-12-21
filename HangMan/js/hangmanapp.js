@@ -13,7 +13,7 @@ api.getInfo()
     ui.displayWord(selectedWord);
     window.addEventListener('keydown', e =>{
         if(e.keyCode){ 
-            ui.keyDown(selectedWord, e)                                 //push the word and the keyNr to method in UI
+            ui.keyDown(selectedWord, e)                                 //Push the word and the keyNr to method in UI
         }
     })
     playBtn.addEventListener('click', () =>{

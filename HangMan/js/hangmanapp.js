@@ -2,19 +2,18 @@ import Api from "./hangmanapi.js"
 import UI from "./uihangman.js" 
 /*===============*/
 
-const api = new Api;
 const ui = new UI;
 
-api.getInfo()
+Api.getInfo()
 .then(data=>{
     const playBtn = document.getElementById('play');
     const words = data.santa;
     let selectedWord = words[Math.floor(Math.random() * words.length)];
+    
     ui.displayWord(selectedWord);
-    window.addEventListener('keydown', e =>{
-        if(e.keyCode){ 
+
+    window.addEventListener('keydown', e =>{ 
             ui.keyDown(selectedWord, e)                                 //Push the word and the keyNr to method in UI
-        }
     })
     playBtn.addEventListener('click', () =>{
         

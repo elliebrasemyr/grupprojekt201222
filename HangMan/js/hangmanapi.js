@@ -1,8 +1,7 @@
 class Api {
 
-    async getInfo(){
+    static async getInfo(){
         const santaResponse = await fetch('./word.json');
-        
         const santa = await santaResponse.json();
        
         return{

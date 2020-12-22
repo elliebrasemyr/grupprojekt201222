@@ -1,8 +1,8 @@
 import Api from "./hangmanapi.js"
 import UI from "./uihangman.js" 
 /*===============*/
-
-const ui = new UI;
+ 
+const ui = new UI;                              //Instansiera
 
 Api.getInfo()
 .then(data=>{
